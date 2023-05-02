@@ -1,6 +1,6 @@
 from django.contrib import admin
 # Добавим модели на сайт одминистратора
-from .models import Post
+from .models import Post, Comment
 
 #В этот класс можно вставлять информацию о том, как показывать модель на сайте и как с ней взаимодействовать.
 @admin.register(Post)
@@ -14,3 +14,10 @@ class PostAdmin(admin.ModelAdmin):
     raw_id_fields = ['author']
     date_hierarchy = 'publish'
     ordering = ['status', 'publish']
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'post', 'created', 'active']
+    list_filter = ['active', 'created', 'updated']
+    search_fields = ['name', 'email', 'body']
