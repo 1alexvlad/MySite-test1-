@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
+
 
 
 # создадим конкретно-прикладной менеджер, чтобы извлекать все посты, имеющие статус PUBLISHED.
@@ -38,7 +40,8 @@ class Post(models.Model):
     
     objects = models.Manager() # менеджер, применяется по умолчанию
     published = PublishedManager() # конкретно прикладной менеджер
-
+    tags = TaggableManager()
+    
 # По умолчанию посты отображаются в обратном порядке(от самых новых до самых старых). А мы это изменим, чтобы сортировал по 
 # полю publish. Также предадим индекс этому полю, чтобы сократить время поиска запрошенных данных
     class Meta:
