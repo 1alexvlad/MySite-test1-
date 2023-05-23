@@ -41,7 +41,7 @@ ol {
     background:#16ca6a;
     color:#fff;
     border-bottom:4px solid #1cdf78;
-    overflow:auto;
+    overflow:auto
 }
 
 #header .logo {
@@ -187,7 +187,7 @@ ul.messages li a.close {
     display:block;
     color:#fff;
 }
-.social li.facebook { background:#3b5399; }
+.social li.vkontakte { background:#3b5399; }
 .social li.twitter { background:#00cffa; }
 .social li.google { background:#de1710; }
 
