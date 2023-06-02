@@ -28,9 +28,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-# Для интеграцию с различными провайдерами авторизации через социальные сети, такие как VK, Twitter, Google
+    # Для интеграцию с различными провайдерами авторизации через социальные сети, такие как VK, Twitter, Google
     'social_django',
     'django_extensions',
+    # Добаляем новое приложение images
+    'images.apps.ImagesConfig',
+    # Создание миниатюр изображений 
+    'easy_thumbnails'
 ]
 
 MIDDLEWARE = [
